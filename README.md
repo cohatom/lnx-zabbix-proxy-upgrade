@@ -1,4 +1,4 @@
-# lnx-zabbix-proxy upgrade
+# lnx-zabbix-proxy-upgrade
 Upgrades MariaDB version from 10.3 to 10.5 on Ubuntu 20.04!
 Tested only with MariaDB version 10.3 and Ubuntu 20.04!
 
