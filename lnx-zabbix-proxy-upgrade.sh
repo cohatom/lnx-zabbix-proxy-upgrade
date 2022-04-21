@@ -4,6 +4,8 @@ XA RECOVER;
 quit
 
 sudo systemctl stop mariadb
+sudo systemctl stop zabbix-proxy
+
 
 sudo apt-get remove "mariadb-*" -y
 
