@@ -26,5 +26,15 @@ sudo mariadb-upgrade --force
 VERSION=$(mysql -uroot -Bse "SELECT VERSION();")
 ISVERSION='10.5'
 if [[ "$VERSION" == *"$ISVERSION"* ]]; then
-  echo "MariaDB updated and running!"
+    echo "MariaDB updated and running!"
+else
+    echo "MariaDB not running version 10.5! Check logs for erros!"
+fi
+
+STATUS1="$(systemctl is-active zabbix-proxy)"
+if [ "${STATUS1}" = "active" ]; then
+    echo "Zabbix Proxy is running."
+else
+    echo " Zabbix Proxy is NOT running! Restart service and check logs! "
+    exit 1
 fi
