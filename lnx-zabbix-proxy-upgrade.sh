@@ -1,13 +1,13 @@
 mysql -uroot -Bse "SET GLOBAL innodb_fast_shutdown = 1;XA RECOVER;"
 
-sudo systemctl stop mariadb
-sudo systemctl stop zabbix-proxy
+sudo service mariadb-server stop
+sudo service zabbix-proxy stop
 
 sudo apt-get remove "mariadb-*" -y
 
 sudo apt remove galera-3 -y
 
-sudo apt install wget
+sudo apt install wget -y
 
 wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
 
