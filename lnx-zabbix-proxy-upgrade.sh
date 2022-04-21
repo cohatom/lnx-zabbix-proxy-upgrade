@@ -28,8 +28,10 @@ ISVERSION='10.5'
 if [[ "$VERSION" == *"$ISVERSION"* ]]; then
     echo "MariaDB updated and running!"
 else
-    echo "MariaDB not running version 10.5! Check logs for erros!"
+    echo "MariaDB not running or not correct version! Check logs for erros!"
 fi
+
+service zabbix-proxy start
 
 STATUS1="$(systemctl is-active zabbix-proxy)"
 if [ "${STATUS1}" = "active" ]; then
